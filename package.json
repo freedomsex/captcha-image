@@ -1,0 +1,26 @@
+{
+  "name": "@freedomsex/captcha-image",
+  "version": "1.0.0",
+  "description": "Timed captcha image component",
+  "main": "index.vue",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@freedomsex/simple-hash": "^1.0.0",
+    "@freedomsex/styles": "^0.1.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/freedomsex/captcha-image.git"
+  },
+  "keywords": [
+    "captcha"
+  ],
+  "author": "tebaly",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/freedomsex/captcha-image/issues"
+  },
+  "homepage": "https://github.com/freedomsex/captcha-image#readme"
+}
