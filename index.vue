@@ -101,18 +101,17 @@ export default {
     <div class="activity-section__tile">
       <div class="image-field" @click="renew()">
         <div class="image-field__addon">
-          <span aria-hidden="true" class="glyphicon glyphicon-arrow-down"></span>
+          <i class="material-icons">arrow_downward</i>
         </div>
         <div class="image-field__image">
-          <img :src="image" v-if="image"
-            width="100" height="50">
+          <img :src="image" v-if="image"  width="100" height="50">
           <span class="image-field__loader" v-else>•••</span>
         </div>
       </div>
     </div>
     <div class="activity-section__tile">
-      <div class="form-group">
-        <input class="form-control" type="tel"
+      <div class="control">
+        <input class="input" type="tel"
          placeholder="Введите код"
          inputmode="numeric" autocomplete="off"
          v-model="code"
