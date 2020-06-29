@@ -2,47 +2,16 @@
 import hasher from '@freedomsex/simple-hash';
 
 export default {
-  props: [],
-  data() {
-    return {
-      id: null,
-      token: null,
-      image: null,
-      time: null,
-      expires: null,
-      process: false,
-      updated: null,
-      timer: null,
-      code: '',
-      inc: 0,
-    };
-  },
-  mounted() {
-    this.start();
-  },
+  props: ['apiName'],
   methods: {
-    now() {
-      return String(new Date().getTime()).slice(0, -3);
-    },
-    freze() {
-      return (this.now() - this.updated) < 3;
-    },
-    expired() {
-      return this.now() > this.expires;
-    },
-    close() {
-      this.$emit('close');
-    },
-
     wait(time) {
       this.time = time;
       this.timer = setTimeout(this.getToken, time * 1000);
       this.updated = this.now();
     },
-
     start() {
       this.process = true;
-      this.$api.res('time', 'verify').load({hash: hasher.random()}).then(({data}) => {
+      this.$api.res('time', this.apiName).load({hash: hasher.random()}).then(({data}) => {
         this.id = data.id;
         this.wait(data.time);
       }).catch(() => {
@@ -50,7 +19,7 @@ export default {
       });
     },
     getToken() {
-      this.$api.res('token', 'verify').post({id: this.id}).then(({data}) => {
+      this.$api.res('token', this.apiName).post({id: this.id}).then(({data}) => {
         if (data.token) {
           this.token = data.token;
           this.expires = data.token.split('.', 3)[1];
@@ -63,10 +32,8 @@ export default {
         this.process = false;
       });
     },
-
-
     draw() {
-      this.$api.res(`image/${this.token}`, 'verify').load().then(({data}) => {
+      this.$api.res(`image/${this.token}`, this.apiName).load().then(({data}) => {
         this.process = false;
         this.image = `data:image/jpeg;base64,${data.image}`;
         this.updated = this.now();
@@ -74,23 +41,6 @@ export default {
       }).catch(() => {
         this.process = false;
       });
-    },
-    update() {
-      this.image = null;
-      this.start();
-    },
-    refresh() {
-      if (!this.process && this.expired()) {
-        this.update();
-      }
-    },
-    renew() {
-      if (!this.process && !this.freze()) {
-        this.update();
-      }
-    },
-    input() {
-      this.$emit('input', this.code);
     },
   },
 };
