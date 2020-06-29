@@ -47,28 +47,7 @@ export default {
 </script>
 
 <template>
-  <div class="simple-captcha"  style="max-width: 270px;">
-    <div class="activity-section__tile">
-      <div class="image-field" @click="renew()">
-        <div class="image-field__addon">
-          <i class="material-icons">arrow_downward</i>
-        </div>
-        <div class="image-field__image">
-          <img :src="image" v-if="image"  width="100" height="50">
-          <span class="image-field__loader" v-else>•••</span>
-        </div>
-      </div>
-    </div>
-    <div class="activity-section__tile">
-      <div class="control">
-        <input class="input" type="tel"
-         placeholder="Введите код"
-         inputmode="numeric" autocomplete="off"
-         v-model="code"
-         @change="input">
-      </div>
-    </div>
-  </div>
+  <Image :image="image" @input="input" @renew="renew"/>
 </template>
 
 <style lang="less">

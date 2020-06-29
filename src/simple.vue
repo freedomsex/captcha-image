@@ -28,7 +28,7 @@ export default {
 </script>
 
 <template>
-  <Image :image="image" @input="input" @renew="renew">
+  <Image :image="image" @input="input" @renew="renew"/>
 </template>
 
 <style lang="less">
