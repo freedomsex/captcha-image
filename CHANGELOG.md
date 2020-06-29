@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.1](https://github.com/freedomsex/captcha-image/compare/v1.1.0...v1.1.1) (2020-06-29)
+
+
+### Bug Fixes
+
+* image ([c7f8c7f](https://github.com/freedomsex/captcha-image/commit/c7f8c7f734f9d4a0f3ad760bc1b216fdd2d39273))
+
 ## [1.1.0](https://github.com/freedomsex/captcha-image/compare/v1.0.1...v1.1.0) (2020-06-29)
 
 
