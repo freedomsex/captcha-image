@@ -49,7 +49,7 @@ export default {
 </script>
 
 <template>
-  <Image :image="image" @input="input" @renew="renew"/>
+  <CaptchaImage :image="image" @input="input" @renew="renew"/>
 </template>
 
 <style lang="less">
