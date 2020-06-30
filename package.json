@@ -1,8 +1,8 @@
 {
   "name": "@freedomsex/captcha-image",
   "version": "1.1.2",
-  "description": "Timed captcha image component",
-  "main": "src/simple.vue",
+  "description": "Captcha image component",
+  "main": "SimpleCaptcha.vue",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
