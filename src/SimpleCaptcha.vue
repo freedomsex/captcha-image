@@ -1,13 +1,8 @@
 <script>
-import hasher from '@freedomsex/simple-hash';
-import Image from './image';
-import Captcha from './captcha';
+import Captcha from './Captcha';
 
 export default {
   props: ['apiName'],
-  components: {
-    Image,
-  },
   mixins: [Captcha],
   methods: {
     start() {

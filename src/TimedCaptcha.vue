@@ -1,8 +1,10 @@
 <script>
 import hasher from '@freedomsex/simple-hash';
+import Captcha from './Captcha';
 
 export default {
   props: ['apiName'],
+  mixins: [Captcha],
   methods: {
     wait(time) {
       this.time = time;

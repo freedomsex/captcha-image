@@ -1,4 +1,9 @@
+import CaptchaImage from './CaptchaImage';
+
 export default {
+  components: {
+    CaptchaImage,
+  },
   data() {
     return {
       id: null,
