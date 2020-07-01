@@ -2,7 +2,9 @@
 export default {
   props: ['image'],
   data() {
-    return { };
+    return {
+      code: '',
+    };
   },
   methods: {
     renew() {

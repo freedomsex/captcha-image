@@ -6,7 +6,7 @@ export default {
   mixins: [Captcha],
   methods: {
     start() {
-      this.$api.res(`image`, this.apiName).load().then(({data}) => {
+      this.$api.res('captcha/image', this.apiName).load().then(({data}) => {
         this.token = data.token;
         this.expires = data.token.split('.', 3)[1];
         this.$emit('token', this.token);
